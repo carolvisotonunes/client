@@ -23,13 +23,13 @@ export const signOut = () => {
 };
 
 export const createStream = formValues => async dispatch => {
-  const response = await streams.post('/streams', formValues);
+  const response = await streams.post('/posts', formValues);
 
   dispatch({ type: CREATE_STREAM, payload: response.data });
 };
 
 export const fetchStreams = () => async dispatch => {
-  const response = await streams.get('/streams');
+  const response = await streams.get('/posts');
 
   dispatch({ type: FETCH_STREAMS, payload: response.data });
 };
